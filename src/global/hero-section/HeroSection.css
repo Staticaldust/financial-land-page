@@ -1,0 +1,56 @@
+/* HeroSection.css */
+.hero {
+  height: 100vh;
+  background-image: url("../../assets/שלבים-לניהול-כלכלת-המשפחה.webp"); /* שים קובץ בתיקיית public/images */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::after {
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+  }
+
+  .cta-button {
+    background: linear-gradient(45deg, #00c853, #64dd17);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(100, 221, 23, 0.6);
+  }
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* שכבת כהות על הרקע */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}

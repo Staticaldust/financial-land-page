@@ -1,12 +1,12 @@
 import Grid from "@mui/material/GridLegacy";
-import NavButton from "./nab-button/NavButton";
 import { BLUE, navbarOptions, YELLOW } from "../../helpers/navbar.helpers";
 import Logo from "./logo/Logo";
 import { Button } from "@mui/material";
+import NavButton from "./nav-button/NavButton";
 
 const Navbar = () => {
   return (
-    <Grid container position="fixed" sx={{ backgroundColor: BLUE }} p={3}>
+    <Grid container position="sticky" sx={{ backgroundColor: BLUE }} p={3}>
       <Grid item position="absolute" top={30} left={30}>
         <Button
           variant="contained"
@@ -16,7 +16,7 @@ const Navbar = () => {
           rel="noopener noreferrer"
           sx={{ bgcolor: YELLOW, p: 0, color: BLUE }}
         >
-          9 לתרומה
+          לתרומה
         </Button>
       </Grid>
       <Grid item xs={12}>
