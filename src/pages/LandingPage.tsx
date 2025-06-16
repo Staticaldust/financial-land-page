@@ -1,19 +1,41 @@
-import SubscribeForm from "@/global/forms/subscribe-form/SubscribeForm";
 import HeroSection from "@/global/hero-section/HeroSection";
 import MainText from "@/global/main-text/MainText";
+import SummaryCard from "@/global/summary-card/SummaryCard";
+import { summaryCardsData } from "@/helpers/summary-card.data";
 import Grid from "@mui/material/GridLegacy";
 
 const LandingPage = () => {
   return (
-    <Grid
-      overflow="auto"
-      container
-      flex={1}
-      direction="column"
-      // spacing={2}
-      // sx={{ p: 2 }}
-    >
-      <HeroSection />
+    <Grid overflow="auto" container rowGap={10} flex={1} direction="column">
+      <Grid item>
+        <HeroSection />
+      </Grid>
+
+      <Grid item>
+        <Grid
+          container
+          justifyContent="center"
+          style={{
+            background: "linear-gradient(0deg,#05005b,#0600bd,#05005b)",
+            direction: "rtl",
+          }}
+          p={5}
+          gap={3}
+        >
+          {summaryCardsData.map(
+            ({ alt, category, excerpt, image, title }, index) => (
+              <SummaryCard
+                key={index}
+                category={category}
+                title={title}
+                excerpt={excerpt}
+                image={image}
+                alt={alt}
+              />
+            )
+          )}
+        </Grid>
+      </Grid>
       <div
         style={{
           height: "100vh",
