@@ -1,4 +1,3 @@
-import SubscribeForm from "@/global/forms/subscribe-form/SubscribeForm";
 import HeroSection from "@/global/hero-section/HeroSection";
 import Grid from "@mui/material/GridLegacy";
 
@@ -14,7 +13,6 @@ const LandingPage = () => {
       // sx={{ p: 2 }}
     >
       <HeroSection />
-      <SubscribeForm />
     </Grid>
   );
 };

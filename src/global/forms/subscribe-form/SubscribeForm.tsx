@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "./SubscribeForm.css";
+import { BLUE } from "@/helpers/navbar.helpers";
 const isValidEmail = (email: string) => {
   const emailRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/;
   return emailRegex.test(email);
 };
+BLUE;
 const SubscribeForm = () => {
   const [formData, setFormData] = useState({ name: "", email: "" });
 
@@ -55,14 +57,14 @@ const SubscribeForm = () => {
         />
 
         <input
+          className={`subscribe-button ${isFormValid ? "validate-form" : ""}`}
+          type="submit"
+          value="הרשמה"
+          disabled={!isFormValid}
           style={{
             cursor: isFormValid ? "pointer" : "not-allowed",
             opacity: isFormValid ? 1 : 0.5,
           }}
-          className="subscribe-button"
-          type="submit"
-          value="הרשמה"
-          disabled={!isFormValid}
         />
       </form>
     </div>

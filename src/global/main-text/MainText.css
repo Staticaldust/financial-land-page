@@ -14,10 +14,13 @@
 }
 
 .cta-button {
-  background: linear-gradient(45deg, #00c853, #64dd17);
-  color: white;
+  background: linear-gradient(45deg, #fcdf00b7, #f8fc00a8);
+  /* background: linear-gradient(45deg, #00c853, #64dd17); */
+  color: #05005b;
+  font-weight: bold;
   border: none;
   padding: 12px 24px;
+  margin: 5px;
   font-size: 1rem;
   border-radius: 30px;
   cursor: pointer;
@@ -26,5 +29,5 @@
 
 .cta-button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(100, 221, 23, 0.6);
+  box-shadow: 0 0 10px #fcdf00b7;
 }
