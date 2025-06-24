@@ -86,6 +86,8 @@
 }
 
 .card-int {
+  position: relative;
+  height: 230px;
   padding: 20px 0 0 0;
 }
 
@@ -97,14 +99,16 @@
 }
 
 .card-int__button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   cursor: pointer;
-  margin: 20px 0 0 0;
   padding: 7px 20px;
   width: 100%;
   background-color: rgb(238, 246, 255);
   border: none;
   color: black;
-  position: relative;
+  /* position: relative; */
   overflow: hidden;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
   transition: box-shadow 0.1s ease-in;
@@ -120,7 +124,7 @@
 }
 
 .card-int__button::before {
-  content: "More for this article";
+  content: "קרא עוד...";
   color: white;
   display: flex;
   align-items: center;
