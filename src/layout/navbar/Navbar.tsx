@@ -6,7 +6,14 @@ import NavButton from "./nav-button/NavButton";
 
 const Navbar = () => {
   return (
-    <Grid container position="sticky" sx={{ backgroundColor: BLUE }} p={3}>
+    <Grid
+      container
+      position="sticky"
+      top={0}
+      zIndex={2}
+      sx={{ backgroundColor: BLUE }}
+      p={3}
+    >
       <Grid item position="absolute" top={30} left={30}>
         <Button
           variant="contained"
