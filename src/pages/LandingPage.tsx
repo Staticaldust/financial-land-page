@@ -22,18 +22,9 @@ const LandingPage = () => {
           p={5}
           gap={3}
         >
-          {summaryCardsData.map(
-            ({ alt, category, excerpt, image, title }, index) => (
-              <SummaryCard
-                key={index}
-                category={category}
-                title={title}
-                excerpt={excerpt}
-                image={image}
-                alt={alt}
-              />
-            )
-          )}
+          {summaryCardsData.map((card, index) => (
+            <SummaryCard key={index} card={card} />
+          ))}
         </Grid>
       </Grid>
       <div

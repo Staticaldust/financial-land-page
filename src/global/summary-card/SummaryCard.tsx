@@ -1,21 +1,20 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import "./SummaryCard.css";
+import DialogDoc from "../dialog-button/DialogDoc";
+import { CardType } from "@/types/main.types";
 
 type SummaryCardProps = {
-  title?: string;
-  category?: string;
-  excerpt?: string;
-  image: string;
-  alt?: string;
+  card: CardType;
 };
 
-const SummaryCard: FC<SummaryCardProps> = ({
-  category,
-  excerpt,
-  title,
-  image,
-  alt,
-}) => {
+const SummaryCard: FC<SummaryCardProps> = ({ card }) => {
+  const { alt, category, excerpt, image, title } = card;
+
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <div className="card">
       <div className="card__corner" />
@@ -29,8 +28,11 @@ const SummaryCard: FC<SummaryCardProps> = ({
         <p className="card-int__title">{title}</p>
         {excerpt && <p className="excerpt">{excerpt}</p>}
 
-        <button className="card-int__button">קרא עוד...</button>
+        <button className="card-int__button" onClick={handleOpen}>
+          קרא עוד...
+        </button>
       </div>
+      <DialogDoc open={open} handleClose={handleClose} card={card} />
     </div>
   );
 };

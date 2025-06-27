@@ -2,8 +2,9 @@ import financialImg from "../assets/summary-cards/financial.jpg";
 import savingImg from "../assets/summary-cards/saving.jpg";
 import investmentsImg from "../assets/summary-cards/investments.webp";
 import brainLampImg from "../assets/summary-cards/brain-lamp.webp";
+import { CardType } from "@/types/main.types";
 
-export const summaryCardsData = [
+export const summaryCardsData: CardType[] = [
   {
     title: "שליטה בכסף שלך מתחילה כאן",
     category: "פיננסים",
