@@ -1,5 +1,5 @@
-import { Fragment, useState } from "react";
-import { Dialog, Grow } from "@mui/material";
+import { useState } from "react";
+import { Dialog, Grid, Grow } from "@mui/material";
 import SubscribeForm from "../forms/subscribe-form/SubscribeForm";
 
 const DialogButton = () => {
@@ -22,17 +22,10 @@ const DialogButton = () => {
         }}
         // fullWidth
         maxWidth="md"
-        PaperComponent={Fragment}
+        PaperComponent={Grid}
         sx={{ direction: "rtl" }}
       >
         <SubscribeForm />
-        {/* <DialogTitle>כותרת הפופאפ</DialogTitle>
-        <DialogContent>
-          <p>כאן תוכן הפופאפ, שיכול להיות גדול.</p>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>סגור</Button>
-        </DialogActions> */}
       </Dialog>
     </>
   );

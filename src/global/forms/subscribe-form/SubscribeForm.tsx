@@ -1,37 +1,51 @@
-import { useState } from "react";
+import { emailRegex } from "@/utils/regex.utils";
+import emailjs from "emailjs-com";
+import { useRef, useState } from "react";
 import "./SubscribeForm.css";
-import { BLUE } from "@/helpers/navbar.helpers";
-const isValidEmail = (email: string) => {
-  const emailRegex =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/;
-  return emailRegex.test(email);
-};
-BLUE;
+
 const SubscribeForm = () => {
   const [formData, setFormData] = useState({ name: "", email: "" });
+  const formRef = useRef<HTMLFormElement>(null);
+  const [message, setMessage] = useState("");
+  const [pending, setPending] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+    setPending(true);
+
+    try {
+      emailjs.sendForm(
+        "service_96uaes6",
+        "template_q6i3iis",
+        formRef.current,
+        "sVNbZ6W6KBZK8Evgr"
+      );
+      setMessage("נרשמת בהצלחה! נשלח אליך מייל תודה.");
+      formRef.current?.reset();
+    } catch (error) {
+      console.error("שגיאה בהגשת הטופס:", error);
+      setMessage("אירעה שגיאה. נסה שוב.");
+    } finally {
+      setPending(false);
+    }
+  };
   const isNameValid = formData.name.trim() !== "";
 
-  const isFormValid = isNameValid && isValidEmail(formData.email);
+  const isFormValid = isNameValid && emailRegex.test(formData.email);
 
   return (
     <div className="container">
       <div className="heading">פרטים</div>
       <form
         className="form"
+        ref={formRef}
         style={{ direction: "rtl" }}
-        onSubmit={(e) => {
-          e.preventDefault();
-          const form = e.currentTarget;
-          if (!form.checkValidity() && isFormValid)
-            return form.reportValidity(); // מראה הודעות דפדפן
-
-          console.log("נרשם:", formData);
-        }}
+        onSubmit={handleSubmit}
       >
         <input
           className="input"
@@ -66,6 +80,7 @@ const SubscribeForm = () => {
             opacity: isFormValid ? 1 : 0.5,
           }}
         />
+        {message && <p>{message}</p>}
       </form>
     </div>
   );
