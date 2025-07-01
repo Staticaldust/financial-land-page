@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Dialog, Grid, Grow } from "@mui/material";
-import SubForm from "../forms/subscribe-form/SubForm";
+import SubscribeForm from "../forms/subscribe-form/SubForm";
 
-const DialogButton = () => {
+const SubButtonForm = () => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
@@ -25,10 +25,10 @@ const DialogButton = () => {
         PaperComponent={Grid}
         sx={{ direction: "rtl" }}
       >
-        <SubForm />
+        <SubscribeForm />
       </Dialog>
     </>
   );
 };
 
-export default DialogButton;
+export default SubButtonForm;

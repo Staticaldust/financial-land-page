@@ -1,8 +1,8 @@
 import { emailRegex } from "@/utils/regex.utils";
 import { useRef, useState } from "react";
-import "./SubscribeForm.css";
+import "./SubForm.css";
 
-const SubscribeForm = () => {
+const SubForm = () => {
   const [form, setForm] = useState({ fullName: "", email: "" });
   const [pending, setPending] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
@@ -101,4 +101,4 @@ const SubscribeForm = () => {
   );
 };
 
-export default SubscribeForm;
+export default SubForm;

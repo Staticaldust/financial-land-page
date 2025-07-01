@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import "../global/forms/subscribe-form/SubscribeForm.css";
+import "../global/forms/subscribe-form/SubForm.css";
 const ThankYouPage = () => {
   const navigate = () => (window.location.href = "/");
   return (
