@@ -1,4 +1,4 @@
-import HeroSection from "@/global/hero-section/HeroSection";
+import BgImageSection from "@/global/hero-section/BgImageSection";
 import MainText from "@/global/main-text/MainText";
 import SummaryCard from "@/global/summary-card/SummaryCard";
 import { summaryCardsData } from "@/helpers/summary-card.data";
@@ -8,7 +8,7 @@ const LandingPage = () => {
   return (
     <Grid overflow="auto" container rowGap={10} flex={1} direction="column">
       <Grid item>
-        <HeroSection />
+        <BgImageSection />
       </Grid>
 
       <Grid item>

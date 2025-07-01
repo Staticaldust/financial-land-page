@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import "./SummaryCard.css";
-import DialogDoc from "../dialog-button/DialogDoc";
+import DialogDoc from "../sub-button-form/DialogDoc";
 import { CardType } from "@/types/main.types";
 
 type SummaryCardProps = {
