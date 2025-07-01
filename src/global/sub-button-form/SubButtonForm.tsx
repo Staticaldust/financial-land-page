@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Dialog, Grid, Grow } from "@mui/material";
-import SubForm from "../forms/subscribe-form/SubForm";
+import SubForm from "../forms/sub-form/SubForm";
 
 const SubButtonForm = () => {
   const [open, setOpen] = useState(false);

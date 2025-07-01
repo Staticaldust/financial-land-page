@@ -5,7 +5,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import Typography from "@mui/material/Typography";
 import { FC } from "react";
-import "./DialogDoc.css";
+import "./DetailsPopup.css";
 import { CardType } from "@/types/main.types";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -17,13 +17,13 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-type DialogDocProps = {
+type DetailsPopupProps = {
   card: CardType;
   open: boolean;
   handleClose: () => void;
 };
 
-const DialogDoc: FC<DialogDocProps> = ({ card, open, handleClose }) => {
+const DetailsPopup: FC<DetailsPopupProps> = ({ card, open, handleClose }) => {
   const { alt, category, excerpt, image, title } = card;
   return (
     <BootstrapDialog
@@ -49,4 +49,4 @@ const DialogDoc: FC<DialogDocProps> = ({ card, open, handleClose }) => {
     </BootstrapDialog>
   );
 };
-export default DialogDoc;
+export default DetailsPopup;
