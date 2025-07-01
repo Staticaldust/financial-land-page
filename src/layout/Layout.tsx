@@ -9,11 +9,15 @@ type LayoutProps = {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <Grid sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+    <Grid
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+      }}
+    >
       <Navbar />
-
       {children}
-
       <Footer />
     </Grid>
   );

@@ -7,7 +7,12 @@ const Footer = () => {
     <Grid
       container
       py={3}
-      sx={{ backgroundColor: "#05005b" }}
+      sx={{
+        backgroundColor: "#05005b",
+        position: "relative",
+        mt: "auto",
+        width: "100%",
+      }}
       alignItems="center"
       justifyContent="center"
     >

@@ -1,46 +1,52 @@
 import { emailRegex } from "@/utils/regex.utils";
-import emailjs from "emailjs-com";
 import { useRef, useState } from "react";
 import "./SubscribeForm.css";
 
 const SubscribeForm = () => {
-  const [formData, setFormData] = useState({ name: "", email: "" });
-  const formRef = useRef<HTMLFormElement>(null);
-  const [message, setMessage] = useState("");
+  const [form, setForm] = useState({ fullName: "", email: "" });
   const [pending, setPending] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formRef.current) return;
     setPending(true);
 
+    const formData = new FormData();
+    formData.append("fullName", form.fullName);
+    formData.append("email", form.email);
+    formData.append("workshop_date", "10 ביולי 2025");
+    formData.append("workshop_time", "18:00");
+    formData.append("workshop_location", "Zoom – קישור יישלח לנרשמים");
+
     try {
-      emailjs.sendForm(
-        "service_96uaes6",
-        "template_q6i3iis",
-        formRef.current,
-        "sVNbZ6W6KBZK8Evgr"
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbxrG2j2ez_R85pW9S8NlROCYGLMHNfQ7JmqdT-2XE849DzCVYk08svHwgvx222OpjyJ/exec",
+        {
+          method: "POST",
+          body: formData,
+          mode: "no-cors",
+        }
       );
-      setMessage("נרשמת בהצלחה! נשלח אליך מייל תודה.");
-      formRef.current?.reset();
+
+      window.location.href = "/thank-you";
     } catch (error) {
-      console.error("שגיאה בהגשת הטופס:", error);
-      setMessage("אירעה שגיאה. נסה שוב.");
-    } finally {
+      console.error("שגיאה בשליחת הטופס:", error);
       setPending(false);
     }
   };
-  const isNameValid = formData.name.trim() !== "";
 
-  const isFormValid = isNameValid && emailRegex.test(formData.email);
+  const isNameValid = form.fullName.trim() !== "";
+
+  const isFormValid = isNameValid && emailRegex.test(form.email) && !pending;
 
   return (
     <div className="container">
       <div className="heading">פרטים</div>
+
       <form
         className="form"
         ref={formRef}
@@ -50,12 +56,13 @@ const SubscribeForm = () => {
         <input
           className="input"
           type="text"
-          name="name"
+          name="fullName"
           id="name"
           placeholder="שם מלא"
-          value={formData.name}
+          value={form.fullName}
           onChange={handleChange}
           title="יש להזין שם מלא"
+          disabled={pending}
         />
 
         <input
@@ -64,23 +71,31 @@ const SubscribeForm = () => {
           name="email"
           id="email"
           placeholder="אימייל"
-          value={formData.email}
+          value={form.email}
           pattern=".*\S.*" // לא רק רווחים
           onChange={handleChange}
           title="יש להזין אימייל תקין"
+          // disabled={pending}
+        />
+
+        <input type="hidden" name="workshop_date" value="10 ביולי 2025" />
+        <input type="hidden" name="workshop_time" value="18:00" />
+        <input
+          type="hidden"
+          name="workshop_location"
+          value="Zoom – קישור יישלח לנרשמים"
         />
 
         <input
           className={`subscribe-button ${isFormValid ? "validate-form" : ""}`}
           type="submit"
-          value="הרשמה"
+          value={pending ? "שולח..." : "הרשמה"}
           disabled={!isFormValid}
           style={{
             cursor: isFormValid ? "pointer" : "not-allowed",
             opacity: isFormValid ? 1 : 0.5,
           }}
         />
-        {message && <p>{message}</p>}
       </form>
     </div>
   );
