@@ -24,7 +24,7 @@ type DetailsPopupProps = {
 };
 
 const DetailsPopup: FC<DetailsPopupProps> = ({ card, open, handleClose }) => {
-  const { alt, category, excerpt, image, title } = card;
+  const { excerpt, title } = card;
   return (
     <BootstrapDialog
       onClose={handleClose}
