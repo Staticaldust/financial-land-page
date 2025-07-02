@@ -1,5 +1,4 @@
 import BgImageSection from "@/global/image-section/ImageSection";
-import MainText from "@/global/image-section/main-text/MainText";
 import LinkSection from "@/global/links-section/LinksSection";
 import SummaryCards from "@/global/summary-card/SummaryCards";
 import Grid from "@mui/material/GridLegacy";
