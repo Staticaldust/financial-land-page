@@ -5,10 +5,8 @@ import "./ImageSection.css";
 const ImageSection = () => {
   return (
     <div className="hero">
-      <div className="hero-content">
-        <MainText />
-        <SubButtonForm />
-      </div>
+      <MainText />
+      <SubButtonForm />
     </div>
   );
 };

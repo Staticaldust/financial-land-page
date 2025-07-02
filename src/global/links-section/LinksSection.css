@@ -1,11 +1,12 @@
 .links-section {
   padding: 2rem 3rem;
   background-color: #f6ebeb;
-  /* background:linear-gradient(0deg,#05005b,#0600bd,#05005b); */
+  background: linear-gradient(0deg, #05005b);
   text-align: center;
 }
 
 .section-title {
+  color: whitesmoke;
   font-size: 2rem;
 }
 
@@ -17,7 +18,7 @@
 }
 
 .link-button {
-  background: linear-gradient(45deg, #1760dd99, #13006a99);
+  background: linear-gradient(45deg, #b29d00b7, #fbff00a8);
   color: white;
   border: none;
   padding: 12px 24px;
@@ -31,5 +32,5 @@
 
 .link-button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 10px #1760dd99;
+  box-shadow: 0 0 20px #fcdf00b7;
 }

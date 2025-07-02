@@ -14,15 +14,9 @@ const MainText = () => (
       position: "relative",
     }}
   >
-    <div className="hero-content2">
-      <div className="hero2">
-        <div className="hero-content">
-          <h1 className="hero-title">שליטה בכסף שלך מתחילה בהחלטה אחת</h1>
-          <p className="hero-subtitle">
-            הצטרף עכשיו - ובנה עתיד כלכלי בטוח יותר
-          </p>
-        </div>
-      </div>
+    <div className="hero-content">
+      <h1 className="hero-title">שליטה בכסף שלך מתחילה בהחלטה אחת</h1>
+      <p className="hero-subtitle">הצטרף עכשיו - ובנה עתיד כלכלי בטוח יותר</p>
     </div>
   </div>
 );
