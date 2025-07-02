@@ -1,5 +1,5 @@
-import BgImageSection from "@/global/hero-section/BgImageSection";
-import MainText from "@/global/main-text/MainText";
+import BgImageSection from "@/global/image-section/ImageSection";
+import MainText from "@/global/image-section/main-text/MainText";
 import SummaryCard from "@/global/summary-card/SummaryCard";
 import { summaryCardsData } from "@/helpers/summary-card.data";
 import Grid from "@mui/material/GridLegacy";

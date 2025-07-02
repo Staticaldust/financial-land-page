@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import "./SummaryCard.css";
-import DialogDoc from "../details-popup/DetailsPopup";
+import DetailsPopup from "../details-popup/DetailsPopup";
 import { CardType } from "@/types/main.types";
 
 type SummaryCardProps = {
@@ -32,7 +32,7 @@ const SummaryCard: FC<SummaryCardProps> = ({ card }) => {
           קרא עוד...
         </button>
       </div>
-      <DialogDoc open={open} handleClose={handleClose} card={card} />
+      <DetailsPopup open={open} handleClose={handleClose} card={card} />
     </div>
   );
 };

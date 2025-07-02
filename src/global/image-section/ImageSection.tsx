@@ -1,8 +1,8 @@
 import SubButtonForm from "../sub-button-form/SubButtonForm";
-import MainText from "../main-text/MainText";
-import "./BgImageSection.css";
+import MainText from "./main-text/MainText";
+import "./ImageSection.css";
 
-const BgImageSection = () => {
+const ImageSection = () => {
   return (
     <div className="hero">
       <div className="hero-content">
@@ -13,4 +13,4 @@ const BgImageSection = () => {
   );
 };
 
-export default BgImageSection;
+export default ImageSection;
