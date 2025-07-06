@@ -1,6 +1,8 @@
 import { emailRegex } from "@/utils/regex.utils";
 import { useRef, useState } from "react";
-import "./SubForm.css";
+import { Button, TextField } from "@mui/material";
+import Grid from "@mui/material/GridLegacy";
+// import "./SubForm.css";
 
 const SubForm = () => {
   const [form, setForm] = useState({ fullName: "", email: "" });
@@ -40,43 +42,38 @@ const SubForm = () => {
   };
 
   const isNameValid = form.fullName.trim() !== "";
-
   const isFormValid = isNameValid && emailRegex.test(form.email) && !pending;
 
   return (
-    <div className="container">
-      <div className="heading">פרטים</div>
-
-      <form
-        className="form"
-        ref={formRef}
-        style={{ direction: "rtl" }}
-        onSubmit={handleSubmit}
-      >
-        <input
-          className="input"
-          type="text"
-          name="fullName"
-          id="name"
-          placeholder="שם מלא"
-          value={form.fullName}
-          onChange={handleChange}
-          title="יש להזין שם מלא"
-          disabled={pending}
-        />
-
-        <input
-          className="input"
-          type="email"
-          name="email"
-          id="email"
-          placeholder="אימייל"
-          value={form.email}
-          pattern=".*\S.*" // לא רק רווחים
-          onChange={handleChange}
-          title="יש להזין אימייל תקין"
-          // disabled={pending}
-        />
+    <Grid container>
+      <form ref={formRef} style={{ direction: "rtl" }} onSubmit={handleSubmit}>
+        <Grid container direction="column">
+          <Grid item xs>
+            <TextField
+              name="fullName"
+              id="name"
+              placeholder="שם מלא"
+              value={form.fullName}
+              onChange={handleChange}
+              title="יש להזין שם מלא"
+              disabled={pending}
+              variant="outlined"
+            />
+          </Grid>
+        </Grid>
+        <Grid item xs>
+          <TextField
+            type="email"
+            name="email"
+            id="email"
+            placeholder="אימייל"
+            value={form.email}
+            // pattern=".*\S.*" // לא רק רווחים
+            onChange={handleChange}
+            title="יש להזין אימייל תקין"
+            variant="filled"
+          />
+        </Grid>
 
         <input type="hidden" name="workshop_date" value="10 ביולי 2025" />
         <input type="hidden" name="workshop_time" value="18:00" />
@@ -86,18 +83,13 @@ const SubForm = () => {
           value="Zoom – קישור יישלח לנרשמים"
         />
 
-        <input
-          className={`subscribe-button ${isFormValid ? "validate-form" : ""}`}
-          type="submit"
-          value={pending ? "שולח..." : "הרשמה"}
-          disabled={!isFormValid}
-          style={{
-            cursor: isFormValid ? "pointer" : "not-allowed",
-            opacity: isFormValid ? 1 : 0.5,
-          }}
-        />
+        <Grid item xs>
+          <Button type="submit" disabled={!isFormValid}>
+            {pending ? "שולח..." : "הרשמה"}
+          </Button>
+        </Grid>
       </form>
-    </div>
+    </Grid>
   );
 };
 

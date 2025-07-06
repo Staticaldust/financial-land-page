@@ -20,7 +20,7 @@ const SubButtonForm = () => {
         slots={{
           transition: Grow,
         }}
-        // fullWidth
+        fullWidth
         maxWidth="md"
         PaperComponent={Grid}
         sx={{ direction: "rtl" }}
