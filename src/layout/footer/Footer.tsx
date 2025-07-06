@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import Grid from "@mui/material/GridLegacy";
-import { footerOptions, YELLOW } from "@/helpers/navbar.helpers";
+import { BLUE, footerOptions, YELLOW } from "@/helpers/navbar.helpers";
 import GenericIconButton from "@/global/generic-icon-button/GenericIconButton";
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
       container
       py={{ xs: 2, sm: 2.5, md: 3 }}
       sx={{
-        backgroundColor: "#05005b",
+        backgroundColor: BLUE,
         position: "relative",
         mt: "auto",
         width: "100%",

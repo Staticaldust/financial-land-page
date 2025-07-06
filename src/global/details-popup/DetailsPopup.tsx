@@ -24,7 +24,7 @@ type DetailsPopupProps = {
 };
 
 const DetailsPopup: FC<DetailsPopupProps> = ({ card, open, handleClose }) => {
-  const { excerpt, title } = card;
+  const { details, title } = card;
   return (
     <BootstrapDialog
       onClose={handleClose}
@@ -36,11 +36,9 @@ const DetailsPopup: FC<DetailsPopupProps> = ({ card, open, handleClose }) => {
       </DialogTitle>
 
       <DialogContent dividers>
-        <Typography gutterBottom>{excerpt}</Typography>
-        <Typography gutterBottom>{excerpt}</Typography>
-        <Typography gutterBottom>{excerpt}</Typography>
-        <Typography gutterBottom>{excerpt}</Typography>
+        <Typography gutterBottom>{details}</Typography>
       </DialogContent>
+
       <DialogActions sx={{ justifyContent: "center" }}>
         <button className="close_explanation_button" onClick={handleClose}>
           סגור

@@ -24,7 +24,7 @@ const SubForm = () => {
 
     try {
       await fetch(
-        "https://script.google.com/macros/s/AKfycbxrG2j2ez_R85pW9S8NlROCYGLMHNfQ7JmqdT-2XE849DzCVYk08svHwgvx222OpjyJ/exec",
+        "https://script.google.com/macros/s/AKfycbxwMgJmLw8SjDNYe3X6EK5-sAISvno1Z91HUKGknf2rXgj6NS6mpjBp-c5zgCpYb6Lcqg/exec",
         {
           method: "POST",
           body: formData,

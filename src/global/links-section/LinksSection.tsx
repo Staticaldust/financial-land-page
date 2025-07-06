@@ -1,12 +1,16 @@
 import "./LinksSection.css";
 
-const links = [
+export const links = [
   {
-    title: "ליצירת טופס ניוד מחברת החשמל",
+    title: "לניוד החשמל",
     url: "https://matara.pro/nedarimplus/Forms/2820.html?k=506",
   },
   {
-    title: "למעבר לאתר למחייתם",
+    title: "להרשמה ׳למחייתם׳",
+    url: "https://www.charidy.com/Lemichyatam/1361",
+  },
+  {
+    title: "הוזלת ביטוחים וקרנות חיסכון",
     url: "https://www.charidy.com/Lemichyatam/1361",
   },
 ];

@@ -8,8 +8,8 @@ const Logo = () => {
       src={logo}
       alt="לוגו"
       sx={{
-        height: { xs: "50px", sm: "70px", md: "90px" },
-        width: { xs: "50px", sm: "70px", md: "90px" },
+        height: { xs: "65px", sm: "85px", md: "95" },
+        width: { xs: "65px", sm: "85px", md: "95" },
         objectFit: "contain",
       }}
     />

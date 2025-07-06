@@ -13,7 +13,7 @@ const Navbar = () => {
       zIndex={2}
       sx={{
         backgroundColor: BLUE,
-        p: { xs: 0.5, sm: 1, md: 1.5 },
+        p: 0,
         minHeight: { xs: "auto", sm: "auto", md: "auto" },
       }}
     >
@@ -69,7 +69,7 @@ const Navbar = () => {
         <Button
           variant="contained"
           size="small"
-          href="https://www.paypal.com/donate/?hosted_button_id=Z3X2K5Q9V6W7G"
+          href="https://www.matara.pro/nedarimplus/online/?mosad=7009215"
           target="_blank"
           rel="noopener noreferrer"
           sx={{
