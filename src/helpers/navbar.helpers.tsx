@@ -1,6 +1,6 @@
 import { FooterOptionType, NavbarOptionType } from "../types/navbar.types";
-import PhoneIcon from "@mui/icons-material/Phone";
-import EmailIcon from "@mui/icons-material/Email";
+// import PhoneIcon from "@mui/icons-material/Phone";
+// import EmailIcon from "@mui/icons-material/Email";
 export const BLUE = "#1b4861";
 export const YELLOW = "#f5cf55";
 
