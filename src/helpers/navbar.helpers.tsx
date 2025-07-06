@@ -15,21 +15,11 @@ export const navbarOptions: NavbarOptionType[] = [
     value: "more details",
     onclick: () => console.log("nav button clicked..."),
   },
-  {
-    label: "פרטים",
-    value: "more details",
-    onclick: () => console.log("nav button clicked..."),
-  },
-  {
-    label: "פרטים",
-    value: "more details",
-    onclick: () => console.log("nav button clicked..."),
-  },
-  {
-    label: "פרטים",
-    value: "more details",
-    onclick: () => console.log("nav button clicked..."),
-  },
+  // {
+  //   label: "פרטים",
+  //   value: "more details",
+  //   onclick: () => console.log("nav button clicked..."),
+  // },
 ];
 
 export const footerOptions: FooterOptionType[] = [

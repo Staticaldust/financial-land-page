@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <Grid
       container
-      py={3}
+      py={{ xs: 2, sm: 2.5, md: 3 }}
       sx={{
         backgroundColor: "#05005b",
         position: "relative",
@@ -16,8 +16,20 @@ const Footer = () => {
       alignItems="center"
       justifyContent="center"
     >
-      <Grid item px={3} position="absolute" left={0}>
-        <Typography variant="body1" color={YELLOW}>
+      <Grid
+        item
+        px={{ xs: 1, sm: 2, md: 3 }}
+        position="absolute"
+        left={0}
+        sx={{ display: { xs: "none", sm: "block" } }}
+      >
+        <Typography
+          variant="body1"
+          color={YELLOW}
+          sx={{
+            fontSize: { xs: "0.8rem", sm: "0.9rem", md: "1rem" },
+          }}
+        >
           שחר טוב © 2025
         </Typography>
       </Grid>

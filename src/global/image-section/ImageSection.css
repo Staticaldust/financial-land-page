@@ -42,3 +42,38 @@
   /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(61, 61, 61, 0.5)); */
   z-index: 1;
 }
+
+/* Tablet Responsive */
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 80vh;
+    background-position: center center;
+  }
+
+  .hero-content {
+    padding: 20px;
+  }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 480px) {
+  .hero {
+    height: 70vh;
+    background-position: center center;
+  }
+
+  .hero-content {
+    padding: 15px;
+  }
+}
+
+/* Small Mobile Responsive */
+@media screen and (max-width: 360px) {
+  .hero {
+    height: 60vh;
+  }
+
+  .hero-content {
+    padding: 10px;
+  }
+}

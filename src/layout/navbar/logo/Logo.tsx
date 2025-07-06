@@ -1,13 +1,16 @@
 import logo from "@/assets/logo.png";
+import { Box } from "@mui/material";
 
 const Logo = () => {
   return (
-    <img
+    <Box
+      component="img"
       src={logo}
       alt="לוגו"
-      style={{
-        height: "90px",
-        width: "90px",
+      sx={{
+        height: { xs: "50px", sm: "70px", md: "90px" },
+        width: { xs: "50px", sm: "70px", md: "90px" },
+        objectFit: "contain",
       }}
     />
   );
