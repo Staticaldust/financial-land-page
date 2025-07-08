@@ -15,8 +15,8 @@ const MainText = () => (
     }}
   >
     <div className="hero-content">
-      <h1 className="hero-title">שליטה בכסף שלך מתחילה בהחלטה אחת</h1>
-      <p className="hero-subtitle">הצטרף עכשיו - ובנה עתיד כלכלי בטוח יותר</p>
+      <h1 className="hero-title">מתייעלים כלכלית - צעד אחר צעד</h1>
+      <p className="hero-subtitle">שחר טוב - עזרה הדדית</p>
     </div>
   </div>
 );
