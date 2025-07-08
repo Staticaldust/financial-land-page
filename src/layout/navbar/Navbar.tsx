@@ -24,7 +24,7 @@ const Navbar = () => {
         sx={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "flex-start",
+          justifyContent: "center",
         }}
       >
         <Logo />
@@ -63,7 +63,7 @@ const Navbar = () => {
         sx={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "flex-end",
+          justifyContent: "center",
         }}
       >
         <Button

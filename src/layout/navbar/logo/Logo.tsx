@@ -11,6 +11,8 @@ const Logo = () => {
         height: { xs: "65px", sm: "85px", md: "95" },
         width: { xs: "65px", sm: "85px", md: "95" },
         objectFit: "contain",
+        transform: "scale(1.5)", // פי 2פי 2
+        transformOrigin: "center",
       }}
     />
   );
